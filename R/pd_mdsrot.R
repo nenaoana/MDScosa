@@ -1,29 +1,31 @@
 # Rotate Axes:
 
 pd_mdsrot <- function
-(RS_COORD, WF , EL)
+(rescalemat, 
+ WF, 
+ EL)
 {
   # Coord of OBS 1 and 2:
-  x1 = mean(RS_COORD[WF, 1])
-  y1 = mean(RS_COORD[WF, 2])
-  x2 = mean(RS_COORD[EL, 1])
-  y2 = mean(RS_COORD[EL, 2])
+  x1 = mean(rescalemat[WF, 1])
+  y1 = mean(rescalemat[WF, 2])
+  x2 = mean(rescalemat[EL, 1])
+  y2 = mean(rescalemat[EL, 2])
   
   # Center configuration:
   
-  dim1c = RS_COORD[, 1] - ((x1+x2)/2)
-  dim2c = RS_COORD[, 2] - ((y1+y2)/2)
+  dim1c = rescalemat[, 1] - ((x1+x2)/2)
+  dim2c = rescalemat[, 2] - ((y1+y2)/2)
   
-  RS_COORD_c <- RS_COORD
-  RS_COORD_c[,1] <- dim1c
-  RS_COORD_c[,2] <- dim2c
+  rescalemat_c <- rescalemat
+  rescalemat_c[,1] <- dim1c
+  rescalemat_c[,2] <- dim2c
   
   # New coordinates of obs1 and obs2:
   
-  x1c = mean(RS_COORD_c[WF, 1])
-  y1c = mean(RS_COORD_c[WF, 2])
-  x2c = mean(RS_COORD_c[EL, 1])
-  y2c = mean(RS_COORD_c[EL, 2])
+  x1c = mean(rescalemat_c[WF, 1])
+  y1c = mean(rescalemat_c[WF, 2])
+  x2c = mean(rescalemat_c[EL, 1])
+  y2c = mean(rescalemat_c[EL, 2])
   
   # determine appropriate rotation (based on coord of obs2):
   
@@ -62,8 +64,8 @@ pd_mdsrot <- function
   # check
   if (i==0) stop('i==0??? - check the command again, you might have messed something up!')
   
-  RS_COORD_r <- RS_COORD_c
-  RS_COORD_r[,1] <- dim1r
-  RS_COORD_r[,2] <- dim2r
-  return(RS_COORD_r)
+  rescalemat_r <- rescalemat_c
+  rescalemat_r[,1] <- dim1r
+  rescalemat_r[,2] <- dim2r
+  return(rescalemat_r)
 } 
