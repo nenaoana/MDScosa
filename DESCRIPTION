@@ -1,0 +1,14 @@
+Package: MDScosa
+Type: Package
+Title: Multidimensional Scaling (MDS) for COSA data
+Version: 1.0
+Date: 2020-04-05
+Author: Ioana-Elena Oana [aut, cre]	
+Maintainer: Ioana-Elena Oana <ioana.oana@eui.eu>
+Description: Multidimensional Scaling (MDS) for election campaign data from the PolDem Obsevatory
+Depends: smacof, ggplot2, R (>= 3.5.0)
+Imports: smacof, ggplot2
+License: GPL-2
+Packaged: 2020-04-05 11:45 CET; Nena
+NeedsCompilation: no
+Date/Publication: 2020-04-05 15:19
