@@ -35,7 +35,7 @@ pd_rescale <- function
   } 
   
   raw <- pd_mdscprod(distmatr = mdsmat[[1]], wmat = mdsmat[[2]], n_issues = n_issues, n_years = n_years) #for the initial dist
-  final <- pd_mdscprod(distmatr = pscalemat[[1]], wmat = mdsmat[[2]], n_issues = n_issues, n_years = n_years) #for the new dist
+  final <- pd_mdscprod(distmatr = distmat[[1]], wmat = mdsmat[[2]], n_issues = n_issues, n_years = n_years) #for the new dist
   rf <- final/raw # the rescale factor
   # Rescale coordinates:
   RS_COORD <- pd_mdsresc(distmat[[2]], rf)
