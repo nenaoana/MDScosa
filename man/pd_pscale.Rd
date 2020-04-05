@@ -8,7 +8,7 @@ Function for creating distances and coordinates from weight and distances matric
 }
 \usage{
 pd_pscale <- (mdsmat, 
- ndim = 2)
+ ndim = 2)}
 \arguments{
   \item{mdsmat}{Distance and weight matrices. Usually the result of function pd_mdsmat.}
   \item{ndim}{The number of dimensions, default is 2, but can be changes for testing the stess. 
